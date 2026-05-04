@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daniel de la Cruz | Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #141414;
+      color: white;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+      z-index: 1000;
+    }
+
+    header h1 {
+      color: #e50914;
+      font-size: 24px;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    .hero {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 60px;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      max-width: 600px;
+    }
+
+    .hero p {
+      margin-top: 20px;
+      max-width: 500px;
+      line-height: 1.5;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #e50914;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    section {
+      padding: 80px 60px;
+    }
+
+    h3 {
+      margin-bottom: 20px;
+    }
+
+    .row {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+    }
+
+    .card {
+      min-width: 300px;
+      background: #222;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .resume, .contact {
+      max-width: 800px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: gray;
+    }
+
+    @media(max-width:768px) {
+      .hero h2 { font-size: 32px; }
+      section { padding: 60px 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Daniel.dev</h1>
+  <div>
+    <a href="#projects">Projects</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
+<div class="hero">
+  <h2>I build modern, scalable web systems.</h2>
+  <p>Full-stack developer focused on performance-driven applications, clean UI, and real-world solutions that employers actually need.</p>
+  <button class="btn" onclick="scrollToProjects()">View My Work</button>
+</div>
+
+<section id="projects">
+  <h3>Featured Project</h3>
+  <div class="row">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" alt="project">
+      <div class="card-content">
+        <h4>Student Enrollment System</h4>
+        <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript, SQL, PL/SQL</p>
+        <p>Designed and implemented a database-driven enrollment system that manages students, subjects, and instructors with optimized queries and reporting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="resume" class="resume">
+  <h3>Resume</h3>
+  <p><strong>Name:</strong> Daniel de la Cruz</p>
+  <p><strong>Role:</strong> Full-Stack Developer</p>
+  <p><strong>Skills:</strong> HTML, CSS, JavaScript, SQL, PL/SQL, Git, Cloudflare</p>
+  <p><strong>Experience:</strong> Built database systems and responsive web apps focused on performance and usability.</p>
+  <p><strong>LinkedIn:</strong> www.linkedin.com/in/daniel-de-la-cruz-057263287</p>
+</section>
+
+<section id="contact" class="contact">
+  <h3>Contact Me</h3>
+  <form onsubmit="sendMessage(event)">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea rows="5" placeholder="Your Message" required></textarea>
+    <button class="btn">Send</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2026 Daniel de la Cruz</p>
+</footer>
+
+<script>
+  function scrollToProjects() {
+    document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function sendMessage(e) {
+    e.preventDefault();
+    alert('Connect this to Cloudflare Worker later');
+  }
+</script>
+
+</body>
+</html>
